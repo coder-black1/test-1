@@ -1,0 +1,533 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: circular;
+
+  src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: circular;
+
+  src: url("chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2")
+    format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-brand-bg {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.bg-hero {
+  background-image: url(/images/hero_bg.png);
+}
+
+* {
+  font-family: "Anek Devanagari", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+select {
+  /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); */
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  /* -webkit-print-color-adjust: exact; */
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+}
+
+.bg-lg2 {
+  background-image: linear-gradient(
+    90.41deg,
+    rgba(255, 255, 255, 0.05) -0.38%,
+    rgba(255, 255, 255, 0) 99.66%
+  );
+}
+
+.bg-lg1h:hover {
+  background-image: linear-gradient(142.84deg, #68a0bf -2.03%, #503891 98.16%);
+}
+
+.bg-lg3 {
+  background-image: linear-gradient(
+    116.85deg,
+    rgba(252, 70, 107, 0.5),
+    rgba(63, 94, 251, 0.5)
+  );
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wallet-connect-connect-button {
+  border-radius: 25px;
+  background: #0052ff;
+  display: flex;
+  padding: 10px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 75%;
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.connweb3 .fourth {
+  color: #3457f6;
+  background-color: color-mix(in srgb, #3457f6 15%, transparent);
+}
+
+.modal-el-desc-conn-mode {
+  text-align: center;
+  font-size: 0.8em;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+.connection-buttons {
+  gap: 20px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+.button-overlay {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  position: fixed;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet-connect-connect-button {
+  max-width: 250px;
+}
+
+#connect-modal {
+  z-index: 2;
+  position: fixed;
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-family: Manrope;
+  color: #01091b;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  background: #fff;
+  transition: opacity 0.3s, visibility 0.3s;
+  overflow: hidden auto;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+#modal {
+  position: relative;
+  width: 100%;
+  display: flex;
+  max-width: 360px;
+  width: 100%;
+  /* max-height: 95vh; */
+  font-family: Manrope;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 44px;
+  box-sizing: border-box;
+}
+
+#modal-head {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgb(0 0 0 / 11%);
+  padding-top: 16px;
+  padding-right: 6px;
+  padding-bottom: 16px;
+  padding-left: 6px;
+  box-sizing: border-box;
+  flex-direction: row;
+  width: 100%;
+}
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #fefefe;
+  /* margin: auto; 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 95%; /* Could be more or less, depending on screen size */
+  @apply rounded-[50px] mx-auto my-[5%] sm:my-[5%] sm:w-1/3 h-auto max-h-[96vh] overflow-y-auto;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.typed-cursor {
+  opacity: 1;
+}
+
+.typed-cursor.typed-cursor--blink {
+  animation: typedjsBlink 0.7s infinite;
+  -webkit-animation: typedjsBlink 0.7s infinite;
+  animation: typedjsBlink 0.7s infinite;
+}
+
+@keyframes typedjsBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes typedjsBlink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal-main-menu {
+  display: grid;
+  column-gap: 6px;
+  row-gap: 16px;
+  padding-top: 0px;
+  justify-content: space-between;
+  padding-right: 12px;
+  overflow-y: scroll;
+  padding-bottom: 12px;
+  /* max-height: clamp(360px, 400px, 80vh); */
+  height: 360px;
+  grid-auto-rows: min-content;
+  padding-left: 12px;
+  grid-template-columns: repeat(auto-fill, 76px);
+}
+
+#modal-head {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgb(0 0 0 / 11%);
+  padding-top: 16px;
+  padding-right: 6px;
+  padding-bottom: 16px;
+  padding-left: 6px;
+  box-sizing: border-box;
+  flex-direction: row;
+  width: 100%;
+}
+
+.searchbox {
+  color: color-mix(in srgb, #000 0%, #95a0a0);
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 9px 14px 10px 24px;
+  display: flex;
+  border-radius: 16px;
+  border: #dfdfdf 1px solid;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#modal-main-title {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding: 12px;
+}
+
+.modal-main {
+  display: flex;
+  padding: 0 24px 12px 24px;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#modal {
+  color: #01091b;
+  background: #fff;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 24px;
+  /* overflow-y: scroll; */
+  padding-right: 20px;
+  width: 96%;
+  margin: 0 auto;
+  /* max-height: 500px; */
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.form-group input,
+textarea {
+  margin-top: 3px;
+  color: color-mix(in srgb, #000 0%, #255175);
+  background-color: rgba(0, 0, 0, 0);
+  padding: 6px 14px 7px 24px;
+  display: flex;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  border: #dfdfdf 1px solid;
+  outline: none;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.modal-form-item {
+  display: flex;
+  flex-direction: column;
+  /* gap: 16px; */
+}
+
+.form-image {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-image svg {
+  width: 100px;
+  height: 100px;
+}
+
+.form-image img {
+  height: 80px;
+  width: 80px;
+  transition: all cubic-bezier(0.66, 0, 1, 1) 0.2s;
+  border-radius: 25px;
+  position: relative;
+  margin-top: -91px;
+}
+
+.modal-form-texts {
+  text-align: center;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.form-text-header {
+  margin-bottom: 0;
+  font-size: 0.7em;
+  margin-top: 3px;
+}
+
+.conn-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 6px; */
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  font-size: 12px;
+}
+
+.tab {
+  justify-content: space-evenly;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  /* padding: 5px 10px 5px 10px; */
+  border-radius: 6px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 16px; */
+}
+
+.conn-settings {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  @apply py-3;
+}
+
+.form-group {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.form-group p {
+  @apply text-center;
+}
+
+.form-group.button {
+  align-items: center;
+}
+.form-instruction{
+  font-size: 12px;
+}
+
+.form-submit-button {
+  width: fit-content;
+  position: relative;
+  padding: 8px 20px 8px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.008);
+  color: #fff;
+  background-color: #3396ff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-weight: 600;
+  outline: none;
+  column-gap: 6px;
+}
+
+.modal-main-menu {
+  display: grid;
+  column-gap: 6px;
+  row-gap: 16px;
+  padding-top: 0px;
+  justify-content: space-between;
+  padding-right: 12px;
+  overflow-y: scroll;
+  padding-bottom: 12px;
+  max-height: clamp(360px, 400px, 80vh);
+  height: 360px;
+  grid-auto-rows: min-content;
+  padding-left: 12px;
+  grid-template-columns: repeat(auto-fill, 76px);
+}
+
+.menu-el {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-style: normal;
+  text-rendering: optimizespeed;
+  background-color: rgba(0, 0, 0, 0.023);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  cursor: pointer;
+  max-width: 75px;
+  aspect-ratio: 3/4;
+  transition: opacity 0.3s ease-in-out;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.modal-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
+}
+
+.example-5 {
+  position: relative;
+  border-radius: 8px;
+}
+
+.example-5 svg {
+  /* position: absolute; */
+  border-radius: 8px;
+}
+
+
+.example-5 .line {
+  stroke-dasharray: 260;
+  border-radius: 8px;
+  stroke-width: 10px;
+  fill: transparent;
+  stroke: rgba(0, 77, 241, 0.83);
+  animation: svgAnimation 2.5s linear infinite;
+}
+
+
+
+@keyframes svgAnimation {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+
